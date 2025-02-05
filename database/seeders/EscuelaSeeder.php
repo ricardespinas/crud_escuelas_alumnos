@@ -39,5 +39,81 @@ class EscuelaSeeder extends Seeder
             'telefono' => '97 245 45 47',
             'pagina_web' => ''
         ]);
+
+        Escuela::create([
+            'nombre' => 'Escola A',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+
+        Escuela::create([
+            'nombre' => 'Escola B',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+
+        Escuela::create([
+            'nombre' => 'Escola C',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+
+        Escuela::create([
+            'nombre' => 'Escola D',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+        Escuela::create([
+            'nombre' => 'Escola E',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+        Escuela::create([
+            'nombre' => 'Escola F',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+        Escuela::create([
+            'nombre' => 'Escola G',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+        Escuela::create([
+            'nombre' => 'Escola H',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
+        Escuela::create([
+            'nombre' => 'Escola I',
+            'direccion' => 'Calle Ficticia 3',
+            'logotipo' => '',
+            'correo_electronico' => '',
+            'telefono' => '',
+            'pagina_web' => ''
+        ]);
     }
 }

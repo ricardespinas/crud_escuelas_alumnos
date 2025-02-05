@@ -36,8 +36,8 @@
                         </td>
                         <td>{{ $escuela->pagina_web }}</td>
                         <td>
-                            <a href="{{ route('escuelas.show', $escuela->id) }}" class="btn btn-info">Ver</a>
-                            <a href="{{ route('escuelas.edit', $escuela->id) }}" class="btn btn-warning">Editar</a>
+                            <a href="{{ route('escuelas.show', $escuela->id) }}{{ request()->get('page') ? '?page=' . request('page') : '' }}" class="btn btn-info">Ver</a>
+                            <a href="{{ route('escuelas.edit', $escuela->id) }}{{ request()->get('page') ? '?page=' . request('page') : '' }}" class="btn btn-warning">Editar</a>
                             <form action="{{ route('escuelas.destroy', $escuela->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta escuela?');">
                                 @csrf
                                 @method('DELETE')
@@ -48,6 +48,10 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $escuelas->links() }}
+        
+        <!-- Agregar paginación -->
+        <div class="d-flex justify-content-center">
+            {{ $escuelas->links() }}
+        </div>
     </div>
 @endsection

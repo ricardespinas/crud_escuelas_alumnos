@@ -29,7 +29,7 @@
                         <td>
                             <a href="{{ route('alumnos.show', $alumno->id) }}{{ request()->get('page') ? '?page=' . request('page') : '' }}" class="btn btn-info">Ver</a>
                             <a href="{{ route('alumnos.edit', $alumno->id) }}{{ request()->get('page') ? '?page=' . request('page') : '' }}" class="btn btn-warning">Editar</a>
-                            <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este alumno?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Eliminar</button>

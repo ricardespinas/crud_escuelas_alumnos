@@ -11,9 +11,11 @@ class EscuelaController extends Controller
 {
     public function index()
     {
+        $currentPage = request('page', 1);
+
         // Pagina los resultados de las escuelas
         $escuelas = Escuela::paginate(10);
-        return view('escuelas.index', compact('escuelas'));
+        return view('escuelas.index', compact('escuelas', 'currentPage'));
     }
 
     public function create()

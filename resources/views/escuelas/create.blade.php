@@ -2,6 +2,12 @@
 
 @section('content')
     <div class="container">
+        <a href="{{ route('escuelas.index', ['page' => request('page', 1)]) }}" class="btn btn-secondary">
+            Volver a la lista de Escuelas
+        </a>
+
+        <hr style="margin:50px;">
+
         <h1>Crear Escuela: </h1>
 
         <form action="{{ route('escuelas.store') }}" method="POST" enctype="multipart/form-data">

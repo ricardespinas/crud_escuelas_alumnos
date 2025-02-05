@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <a href="{{ route('escuelas.index', ['page' => request('page', 1)]) }}" class="btn btn-secondary">
-            Volver a la lista
+            Volver a la lista de Escuelas
         </a>
 
         <hr style="margin:50px;">

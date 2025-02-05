@@ -114,5 +114,13 @@ class AlumnoSeeder extends Seeder
             'fecha_nacimiento' => '1989-01-05',
             'ciudad_natal' => 'Hospitalet',
         ]);
+
+        Alumno::create([
+            'nombre' => 'Joan',
+            'apellidos' => 'Feliu',
+            'escuela_id' => $terceraEscuela->id,
+            'fecha_nacimiento' => '1989-01-05',
+            'ciudad_natal' => 'Hospitalet',
+        ]);
     }
 }

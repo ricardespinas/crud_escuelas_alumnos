@@ -2,10 +2,11 @@
 
 @section('content')
     <div class="container">
-
         <a href="{{ route('alumnos.index', ['page' => request('page', 1)]) }}" class="btn btn-secondary">
-            Volver a la lista
+            Volver a la lista de Alumnos
         </a>
+
+        <hr style="margin:50px;">
 
         <h1>Detalles del Alumno: {{ $alumno->nombre }}</h1>
 
