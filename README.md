@@ -39,6 +39,10 @@ Este proyecto es una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) para g
 
         php artisan serve
 
+### 7. Hacer login
+
+    Comprobad el archivo \database\seeders\UserSeeder.php. Ahí aparecen las credenciales
+
 
 
 
