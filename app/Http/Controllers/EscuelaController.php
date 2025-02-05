@@ -26,12 +26,14 @@ class EscuelaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string|max:255',
+            'nombre' => 'required|string|max:255|unique:escuelas',
             'direccion' => 'required|string|max:255',
             'logotipo' => 'nullable|image|mimes:jpg,png,jpeg|max:2048|dimensions:min_width=200,min_height=200',
             'correo_electronico' => 'nullable|email',
             'telefono' => 'nullable|string|max:255',
             'pagina_web' => 'nullable|url',
+        ], [
+            'nombre.unique' => 'Ja existeix una escola amb aquest nom.',
         ]);
 
         $escuela = new Escuela();
