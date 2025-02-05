@@ -29,12 +29,10 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('escuelas.index') }}">Escuelas</a>
                             </li>
-                            <li class="nav-item">
-                                <form class="nav-link text-white" action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button type="submit">Cerrar sesión</button>
-                                </form>
-                            </li>
+                            <form class="nav-item text-white" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+                            </form>
                         </ul>
                     </div>
                 @endif
