@@ -1,25 +1,25 @@
-# CRUD Escuelas / Alumnos
+# CRUD Escuelas (Schools) / Alumnos (Students)
 
-Este proyecto es una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) para gestionar **Escuelas** y **Alumnos**. A continuación se detallan los pasos completos para configurarlo en tu entorno local.
+This project is a CRUD (Create, Read, Update, Delete) application for managing Schools and Students. Below are the complete steps to set it up in your local environment.
 
 
-### 1. Crear un .env apartir del .env.example
+### 1. Create a .env file from .env.example
 
-    Puedes usar este comando de bash des del directorio raíz de tu proyecto: 
+    You can use this Bash command from the root directory of your project:
     
     cp .env.example .env
 
-### 2. Laravel necesita una clave única de la aplicación para cifrar los datos. Puedes generar esta clave ejecutando el siguiente comando:
+### 2. Laravel requires a unique application key to encrypt data. You can generate this key by running the following command:
 
     php artisan key:generate
 
-### 3. Ejecutar desde la consola en el directorio raíz de tu proyecto
+### 3. Run the following command from the console in the root directory of your project
 
-    Puedes usar este comando de bash des del directorio raíz de tu proyecto: 
+    You can use this Bash command from the root directory of your project:
 
     composer install
 
-### 3. Abre tu cliente de MySQL o usa un cliente de base de datos como phpMyAdmin y crea una base de datos que se llame igual que el que aparece en el .env en la variable:     
+### 4. Open your MySQL client or use a database client like phpMyAdmin and create a database with the same name as specified in the .env file under the variable:     
 
     .env
     DB_DATABASE=nombredelabasededatos
@@ -27,28 +27,28 @@ Este proyecto es una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) para g
     mysql command
     CREATE DATABASE nombredelabasededatos;
 
-### 5. Ejecutar las migracions y seed de Laravel que precargará unos registros de inicio necesarios para el correcto funcionamiento, como el usuario de login.
+### 5. Run Laravel migrations and seeders, which will preload necessary initial records required for proper functionality, such as the login user
 
-    Puedes usar este comando de bash des del directorio raíz de tu proyecto: 
+    You can use this Bash command from the root directory of your project:
 
     php artisan migrate --seed
 
-### 6. Acceder a http://localhost
+### 6. Acces http://localhost
 
-    Yo lo he hecho con Apache pero se puede usar artisan también que iniciará el servidor de Laravel:
+    I used Apache, but you can also use Laravel's built-in server with:
 
         php artisan serve
 
-### 7. Hacer login
+### 7. Log in
 
-    Comprobad el archivo \database\seeders\UserSeeder.php. Ahí aparecen las credenciales
-
-
+    Check the file \database\seeders\UserSeeder.php. The login credentials can be found there.
 
 
-### ----------------------------------------------- ###
 
 
-    Existen una serie de archivos que se han mantenido en el repositorio para posibles ampliaciones:
+### -------------- Additional Notes ------------ ###
+
+
+    Some files have been kept in the repository for potential future extensions like:
 
         .editorconfig
