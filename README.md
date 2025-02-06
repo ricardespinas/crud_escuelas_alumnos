@@ -22,10 +22,10 @@ This project is a CRUD (Create, Read, Update, Delete) application for managing S
 ### 4. Open your MySQL client or use a database client like phpMyAdmin and create a database with the same name as specified in the .env file under the variable:     
 
     .env
-    DB_DATABASE=nombredelabasededatos
+    DB_DATABASE=database_name
 
     mysql command
-    CREATE DATABASE nombredelabasededatos;
+    CREATE DATABASE database_name;
 
 ### 5. Run Laravel migrations and seeders, which will preload necessary initial records required for proper functionality, such as the login user
 
