@@ -21,5 +21,9 @@ php artisan key:generate
 # Ejecutar migraciones
 php artisan migrate --force
 
+# Ejecutar seeders
+echo "Ejecutando seeders..."
+php artisan db:seed --force
+
 # Iniciar Apache
 exec apache2-foreground
