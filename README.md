@@ -7,13 +7,11 @@ This project is a CRUD (Create, Read, Update, Delete) application for managing S
 
     .\docker_restart.bat
 
-### 3. Acces http://localhost
+### 3. Acces to:
 
-    I used Apache, but you can also use Laravel's built-in server with:
+    http://localhost
 
-        php artisan serve
-
-### 4. Log in
+### 4. Log in with:
 
     test@test.test -> test
 
