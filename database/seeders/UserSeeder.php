@@ -15,8 +15,8 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@technodac.com',
-            'password' => bcrypt('password'), // Asegúrate de usar bcrypt para la contraseña
+            'email' => 'test',
+            'password' => bcrypt('test'), // Asegúrate de usar bcrypt para la contraseña
         ]);
     }
 }

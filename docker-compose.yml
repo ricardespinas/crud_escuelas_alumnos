@@ -1,0 +1,53 @@
+services:
+  # Servicio para PHP + FPM (Laravel necesita PHP-FPM)
+  crud_escuelas_alumnos_app:
+    build:
+      context: .  # Esto indica que debe usar el Dockerfile en el directorio actual
+    container_name: crud_escuelas_alumnos_app
+    ports:
+      - "8000:80"   # Acceso a la app Laravel en el puerto 8000
+    volumes:
+      - .:/var/www/html  # Enlazamos el proyecto al contenedor
+    networks:
+      - laravel_network
+    environment:
+      - COMPOSER_ALLOW_SUPERUSER=1  # Evitamos problemas con permisos de Composer
+      # Variables de entorno para la base de datos (provenientes del archivo .env de Laravel)
+      - DB_CONNECTION=mysql
+      - DB_HOST=crud_escuelas_alumnos_db  # Nombre del servicio de MySQL en Docker
+      - DB_PORT=${DB_PORT}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    depends_on:
+      - crud_escuelas_alumnos_db  # El contenedor de Laravel depende del contenedor de MySQL
+
+  # Servicio para la base de datos MySQL
+  crud_escuelas_alumnos_db:
+    image: mysql:5.7  # Usamos MySQL 5.7 (compatible con Laravel)
+    container_name: crud_escuelas_alumnos_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+    volumes:
+      - db_data:/var/lib/mysql   # Persistencia de datos de MySQL
+    networks:
+      - laravel_network
+
+  # Servicio para Composer (instalar dependencias de Laravel)
+  composer:
+    image: composer:latest
+    container_name: composer
+    volumes:
+      - .:/app  # Enlazamos el proyecto al contenedor
+    command: install   # Ejecutamos composer install para instalar las dependencias
+    depends_on:
+      - crud_escuelas_alumnos_app
+
+networks:
+  laravel_network:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
