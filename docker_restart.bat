@@ -1,7 +1,21 @@
 @echo off
 cls
 echo ===========================================
-echo 1. Bajando los contenedores...
+echo 1. Copiando el archivo .env...
+echo ===========================================
+IF NOT EXIST .env (
+    copy .env.example .env
+    if errorlevel 1 (
+        echo Error al copiar el archivo .env.
+        pause
+        exit /b
+    )
+) ELSE (
+    echo El archivo .env ya existe. Omitiendo copia.
+)
+
+echo ===========================================
+echo 2. Bajando los contenedores...
 echo ===========================================
 docker-compose down
 if errorlevel 1 (
@@ -11,7 +25,7 @@ if errorlevel 1 (
 )
 
 echo ===========================================
-echo 2. Construyendo la imagen sin cache...
+echo 3. Construyendo la imagen sin cache...
 echo ===========================================
 docker-compose build --no-cache
 if errorlevel 1 (
@@ -21,7 +35,7 @@ if errorlevel 1 (
 )
 
 echo ===========================================
-echo 3. Levantando los contenedores...
+echo 4. Levantando los contenedores...
 echo ===========================================
 docker-compose up -d
 if errorlevel 1 (

@@ -3,13 +3,7 @@
 This project is a CRUD (Create, Read, Update, Delete) application for managing Schools and Students. Below are the complete steps to set it up in your local environment.
 
 
-### 1. Create a .env file from .env.example
-
-    You can use this Bash command from the root directory of your project:
-    
-    cp .env.example .env
-
-### 2. Install everything with the command line:
+### 1. Install everything with the command line:
 
     .\docker_restart.bat
 
